@@ -1,0 +1,459 @@
+% !TEX TS-program = lualatex    %% needs LuaLaTeX format
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{polski}
+\usepackage{pdfpages}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{pgf}
+
+\begin{document}
+
+%zmienne
+\newcommand{\ltabname}{Masa ciężarków[g]}
+\newcommand{\rtabname}{Wydłużenie[cm]}
+\newcommand{\rrtabname}{Czas wykonania 20 wachań[s]}
+% strona tytułowa sprawozdania
+\includepdf{str_tyt.pdf}
+
+% wstęp
+    \section{Wstęp}
+    Zajęcia laboratoryjne polegały na analizie ruchu drgającego ciężarka zawieszonego na sprężynie bądź układzie sprężyn, czyli pomiarze okresu drgania. Pomiary miały być dokonane dwoma metodami - statyczną i dynamiczną. Celem tego miało być wyznaczenie współczynnika sprężystości tych sprężyn oraz ich układów, a także wyznaczenie modułu sztywności materiału sprężyny.
+
+    \section{Otrzymane wyniki}
+    Wyniki otrzymane podczas pomiaru na laboratorium \\
+    
+    %pierwsza sprężyna
+    \begin{center}
+        Pierwsza sprężyna
+        \begin{tabular}{cc}
+            \begin{tabular}{ |c|c| }
+                \hline
+                \multicolumn{2}{|c|}{Metoda statyczna} \\
+                \hline
+                \ltabname & \rtabname \\
+                \hline
+                0 & 0 \\ 
+                \hline
+                50.320 & 5 \\  
+                \hline
+                100.342 & 10 \\    
+                \hline
+                150.596 & 15 \\    
+                \hline
+                200.861 & 20 \\  
+                \hline
+            \end{tabular}
+            &
+            \begin{tabular}{ |c|c|c|c| }
+                \hline
+                \multicolumn{4}{|c|}{Metoda dynamiczna} \\
+                \hline
+                \multirow{2}{5em}{\ltabname} & \multicolumn{3}{|c|}{\rrtabname} \\
+                 & Pomiar 1 & Pomiar 2 & Pomiar 3 \\
+                \hline
+                50.152 & 9.31 & 9.21 & 9.23 \\
+                \hline
+                100.508 & 12.59 & 12.68 & 12.56 \\
+                \hline
+                150.830 & 15.25 & 15.17 & 15.16 \\
+                \hline
+                201.095 & 17.40 & 17.41 & 17.28 \\
+                \hline
+            \end{tabular}
+        \end{tabular}
+    \end{center}
+
+    %druga sprężyna
+    \begin{center}
+        Druga sprężyna
+        \begin{tabular}{cc}
+            \begin{tabular}{ |c|c| }
+                \hline
+                \multicolumn{2}{|c|}{Metoda statyczna} \\
+                \hline
+                \ltabname & \rtabname \\
+                \hline
+                0 & 0 \\ 
+                \hline
+                50.155 & 4.8 \\  
+                \hline
+                100.478 & 10 \\    
+                \hline
+                150.614 & 15.3 \\    
+                \hline
+                200.790 & 20.5 \\  
+                \hline
+            \end{tabular}
+            &
+            \begin{tabular}{ |c|c|c| }
+                \hline
+                \multicolumn{3}{ |c| }{Metoda dynamiczna} \\
+                \hline
+                \multirow{2}{5em}{\ltabname} & \multicolumn{2}{|c|}{\rrtabname} \\
+                & Pomiar 1 & Pomiar 2 \\
+                \hline
+                50.155 & 9.53 & 9.49 \\
+                \hline
+                100.478 & 12.89 & 12.93 \\
+                \hline
+                150.614 & 15.57 & 15.43\\
+                \hline
+                200.790 & 17.76 & 17.77 \\
+                \hline
+            \end{tabular}
+              
+        \end{tabular}
+    \end{center}
+    \textbf{własności pierwszej sprężyny}
+    \[ r = 0.4 mm \]
+    \[ N = 77 \mbox{ zwojów} \]
+    \[ R = 8.3 mm \]
+
+    \pagebreak
+
+    %równoległę
+    \begin{center}
+        Obie sprężyny połączone równolegle
+        \begin{tabular}{cc}
+            \begin{tabular}{|c|c|}
+                \hline
+                \multicolumn{2}{|c|}{Metoda statyczna} \\
+                \hline
+                \ltabname & \rtabname \\
+                \hline
+                0 & 0 \\
+                \hline
+                50.155 & 2.5 \\
+                \hline
+                100.478 & 5.2 \\
+                \hline
+                150.614 & 7.8 \\
+                \hline
+                200.790 & 10.2 \\
+                \hline
+            \end{tabular}
+            &
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                \multicolumn{4}{|c|}{Metoda dynamiczna} \\
+                \hline
+                \multirow{2}{5em}{\ltabname} & \multicolumn{3}{|c|}{\rrtabname} \\
+                 & Pomiar 1 & Pomiar 2 & Pomiar 3 \\
+                \hline
+                50.155 & 8.54 & 8.53 & 8.36 \\
+                \hline
+                100.478 & 10.56 & 10.55 & 10.55 \\
+                \hline
+                150.614 & 12.15 & 12.13 & 12.11 \\
+                \hline
+                200.790 &  13.58 &  13.57 &  13.59 \\
+                \hline
+
+            \end{tabular}
+        \end{tabular}
+    \end{center}
+
+    %szeregowo
+    \begin{center}
+        Obie sprężyny połączone szeregowo
+        \begin{tabular}{cc}
+            \begin{tabular}{|c|c|}
+                \hline
+                \multicolumn{2}{|c|}{Metoda statyczna} \\
+                \hline
+                \ltabname & \rtabname \\
+                \hline
+                0 & 0 \\
+                \hline
+                50.155 & 10.5 \\
+                \hline
+                100.478 & 20.8 \\
+                \hline
+                150.614 & 31.1 \\
+                \hline
+                200.790 & 41.3 \\
+                \hline
+            \end{tabular}
+            &
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                \multicolumn{4}{|c|}{Metoda dynamiczna} \\
+                \hline
+                \multirow{2}{5em}{\ltabname} & \multicolumn{3}{|c|}{\rrtabname} \\
+                 & Pomiar 1 & Pomiar 2 & Pomiar 3 \\
+                \hline
+                50.155 & 13.91 & 13.88 & 13.96 \\
+                \hline
+                100.478 & 18.58 & 18.45 & 18.40 \\
+                \hline
+                150.614 & 22.16 & 22.15 & 22.16 \\
+                \hline
+                200.790 & 25.32 & 25.36 & 25.30 \\
+                \hline
+            \end{tabular}
+        \end{tabular}
+    \end{center}
+
+    \pagebreak
+    
+    \section{Opracowanie wyników}
+    \textbf{M7.1} Wyznaczyć współczynnik sprężystości wybranej sprężyny wykorzystując
+    statyczną metodę pomiaru czyli badając zależność jej wydłużenia od wartości
+    obciążenia\\ \\
+    Wyznaczanie współczynnika sprężystości sprężyny nr. 1 \\
+    Mierzyliśmy wydłużenie sprężyny pod wpływem różnych wartości obciążenia - od 0 g do około 200 g, dokładając kolejne ciężarki. Wyniki wyglądają następująco: \\
+    \input{Grafy/pierwsza/statyczna/graf.tex}
+    Te dane pomogą nam wyznaczyć współczynnik sprężystości danej sprężyny. Z prawa Hooke’a wynika, że siła potrzebna do odkształcenia ciała jest wprost proporcjonalna do tego odkształcenia. Można to wyrazić równaniem F = kx, gdzie F jest przykładaną siłą, k jest stałą sprężystości ciała, a x jego wydłużeniem. Pozwala to łatwo wyprowadzić wzór na stałą sprężystości:
+    \[k = \frac{F}{x} \]
+        Daną x uzyskaliśmy mierząc wydłużenie sprężyny, a F możemy obliczyć za pomocą wzoru na siłę ciężkości F = mg, gdzie m jest masą obciążenia naszej sprężyny, a g jest wartością przyspieszenia grawitacyjnego, która na Ziemi wynosi ok. $9,81 \frac{m}{s^2}$. Po dokonaniu wszystkich obliczeń otrzymaliśmy następujące wyniki:
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & Wydłużenie[m] & stała sprężystości k\\
+            \hline
+            0.050320 & 0.05 & \pgfmathparse{9.81*0.050320/0.05}\pgfmathresult \\
+            \hline
+            0.100342 & 0.10 & \pgfmathparse{9.81*0.100342/0.10}\pgfmathresult \\    
+            \hline
+            0.150596 & 0.15 & \pgfmathparse{9.81*0.150596/0.15}\pgfmathresult \\    
+            \hline
+            0.200861 & 0.20 & \pgfmathparse{9.81*0.200861/0.20}\pgfmathresult \\  
+            \hline
+        \end{tabular}
+        \caption{obliczanie stałej k dla poszczególnych pomiarów.}
+    \end{table}
+
+
+    
+    \[k_{\mbox{średnia}} = \pgfmathparse{(9.81*0.050320/0.05 + 9.81*0.100342/0.10 + 9.81*0.150596/0.15 + 9.81*0.200861/0.20) /4}\pgfmathresult\]
+    %niepewność pomiaru
+    Niepewność pomiaru wydłużenia sprężyny oszacowaliśmy na 0,1 cm.
+    Niepewność pomiaru współczynnika sprężystości:
+    \\f(x) = 0.081*x + 1.914 \\
+    f'(x) = 0.081 \\
+    Średnia wartość współczynnika sprężystości sprężyny:
+    \[ k = \pgfmathparse{(9.81*0.050320/0.05 + 9.81*0.100342/0.10 + 9.81*0.150596/0.15 + 9.81*0.200861/0.20) /4}\pgfmathresult\]
+    Zatem: 
+    \[ k = (\pgfmathparse{(9.81*0.050320/0.05 + 9.81*0.100342/0.10 + 9.81*0.150596/0.15 + 9.81*0.200861/0.20) /4}\pgfmathresult \pm  0.081) \frac{N}{m} \]
+
+    \pagebreak
+    \textbf{M7.2} Wyznaczyć współczynnik sprężystości wybranej sprężyny wykorzystując
+    dynamiczną metodę pomiaru czyli mierząc zależność okresu jej drgań od wartości obciążenia. \\
+    \input{Grafy/pierwsza/dynamiczna/graf.tex}
+    
+    uzywając \[ k = \frac{4 \pi ^2 m}{T^2} \]
+    
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & \rrtabname & stała sprężystości k\\
+            \hline
+            0.050152 & \pgfmathparse{(9.31+9.21+9.23)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.050152  / ((9.31+9.21+9.23)/(3*20))^2}\pgfmathresult\\  
+            \hline
+            0.100508 & \pgfmathparse{(12.59+12.68+12.56)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.100508  / ((12.59+12.68+12.56)/(3*20))^2}\pgfmathresult\\    
+            \hline
+            0.150830 & \pgfmathparse{(15.25+15.17+15.16)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.150830  / ((15.25+15.17+15.16)/(3*20))^2}\pgfmathresult\\    
+            \hline
+            0.201095 & \pgfmathparse{(17.40+17.41+17.28)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.201095  / ((17.40+17.41+17.28)/(3*20))^2}\pgfmathresult\\  
+            \hline
+        \end{tabular}
+    \end{table}
+    \[ k_{\mbox{średnie}} = \pgfmathparse{((4*(3.14)^2 * 0.050152  / ((9.31+9.21+9.23)/(3*20))^2) + (4*(3.14)^2 * 0.100508  / ((12.59+12.68+12.56)/(3*20))^2) + (4*(3.14)^2 * 0.150830  / ((15.25+15.17+15.16)/(3*20))^2) + (4*(3.14)^2 * 0.201095  / ((17.40+17.41+17.28)/(3*20))^2))/4}\pgfmathresult \]
+    %niepewność pomiaru
+    Niepewność pomiaru wydłużenia sprężyny oszacowaliśmy na 0,1 cm.
+    Niepewność pomiaru współczynnika sprężystości:
+    \\f(x) = 0.081*x + 1.914 \\
+    f'(x) = 0.081 \\
+    Średnia wartość współczynnika sprężystości sprężyny:
+    \[ k = \pgfmathparse{((4*(3.14)^2 * 0.050152  / ((9.31+9.21+9.23)/(3*20))^2) + (4*(3.14)^2 * 0.100508  / ((12.59+12.68+12.56)/(3*20))^2) + (4*(3.14)^2 * 0.150830  / ((15.25+15.17+15.16)/(3*20))^2) + (4*(3.14)^2 * 0.201095  / ((17.40+17.41+17.28)/(3*20))^2))/4}\pgfmathresult \]
+    Zatem: 
+    \[ k = (\pgfmathparse{((4*(3.14)^2 * 0.050152  / ((9.31+9.21+9.23)/(3*20))^2) + (4*(3.14)^2 * 0.100508  / ((12.59+12.68+12.56)/(3*20))^2) + (4*(3.14)^2 * 0.150830  / ((15.25+15.17+15.16)/(3*20))^2) + (4*(3.14)^2 * 0.201095  / ((17.40+17.41+17.28)/(3*20))^2))/4}\pgfmathresult \pm  0.081) \frac{N}{m} \]
+    
+    
+    \textbf{M7.3} Obliczyć moduł sztywności materiału sprężyny.\\
+    Współczynnik sprężystości sprężyny jest zależny od modułu sztywności materiału, z którego została zrobiona, na co wskazuje równanie $k = \frac{Gr^4}{4NR^3}$. W celu obliczenia modułu, można go wyprowadzić z tego wzoru by uzyskać takie równanie: 
+    \[G = \frac{4kNR^3}{r^4}\]
+    gdzie:\\
+    k - współczynnik sprężystości sprężyny,\\
+    N - liczba zwojów sprężyny,\\
+    R - promień sprężyny,\\
+    r - promień drutu sprężyny.\\
+    \[ G = \frac{ \pgfmathparse{(9.81*0.050320/0.05 + 9.81*0.100342/0.10 + 9.81*0.150596/0.15 + 9.81*0.200861/0.20) /4}\pgfmathresult*4 * 77 * 0.0083^3}{0.0004^4} = \]
+    
+    \pagebreak
+    \textbf{Obliczanie stałej sprężystości również dla drugiej sprężyny} \\
+    \input{Grafy/druga/statyczna/graf.tex}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & Wydłużenie[m] & stała sprężystości k\\
+            \hline
+            0.050155  & 0.048 & \pgfmathparse{9.81*0.050155/0.048}\pgfmathresult\\  
+            \hline
+            0.100478  & 0.100 & \pgfmathparse{9.81*0.100478/0.100}\pgfmathresult\\    
+            \hline
+            0.150614 & 0.153 & \pgfmathparse{9.81*0.150614/0.153}\pgfmathresult\\    
+            \hline
+            0.200790 & 0.205 & \pgfmathparse{9.81*0.200790/0.205}\pgfmathresult\\  
+            \hline
+        \end{tabular}
+        \caption{obliczanie stałej k dla poszczególnych pomiarów.}
+    \end{table}
+    \[k_{\mbox{średnia}} = \pgfmathparse{(9.81*0.050155/0.048 + 9.81*0.100478/0.100 + 9.81*0.150614/0.153 + 9.81*0.200790/0.205)/4}\pgfmathresult\]
+
+    \input{Grafy/druga/dynamiczna/graf.tex}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & \rrtabname & stała sprężystości k\\
+            \hline
+            0.050155 & \pgfmathparse{(9.53+9.49)/2}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.050155  / ((9.53+9.49)/(2*20))^2}\pgfmathresult\\  
+            \hline
+            0.100478 & \pgfmathparse{(12.89+12.93)/2}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.100478  / ((12.89+12.93)/(2*20))^2}\pgfmathresult\\    
+            \hline
+            0.150614 & \pgfmathparse{(15.57+15.43)/2}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.150614  / ((15.57+15.43)/(2*20))^2}\pgfmathresult\\    
+            \hline
+            0.200790 & \pgfmathparse{(17.76+17.77)/2}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.200790  / ((17.76+17.77)/(2*20))^2}\pgfmathresult\\  
+            \hline
+        \end{tabular}
+    \end{table}
+    \[ k_{\mbox{średnie}} = \pgfmathparse{((4*(3.14)^2 * 0.050155  / ((9.53+9.49)/(2*20))^2) + (4*(3.14)^2 * 0.100478  / ((12.89+12.93)/(2*20))^2) + (4*(3.14)^2 * 0.150614  / ((15.57+15.43)/(2*20))^2) + (4*(3.14)^2 * 0.200790  / ((17.76+17.77)/(2*20))^2))/4}\pgfmathresult \]
+    
+
+    \textbf{M7.4}
+
+
+    Wyznaczanie współczynnika sprężystości sprężyn połączonych rownolegle \\
+    \input{Grafy/szeregowo/statyczna/graf.tex}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & Wydłużenie[m] & stała sprężystości k\\
+            \hline
+            0.050155  & 0.025 & \pgfmathparse{9.81*0.050155/0.025}\pgfmathresult\\  
+            \hline
+            0.100478  & 0.052 & \pgfmathparse{9.81*0.100478/0.052}\pgfmathresult\\    
+            \hline
+            0.150614 & 0.078 & \pgfmathparse{9.81*0.150614/0.078}\pgfmathresult\\    
+            \hline
+            0.200790 & 0.102 & \pgfmathparse{9.81*0.200790/0.102}\pgfmathresult\\  
+            \hline
+        \end{tabular}
+        \caption{obliczanie stałej k dla poszczególnych pomiarów.}
+    \end{table}
+    \[k_{\mbox{średnia}} = \pgfmathparse{(9.81*0.050155/0.025 + 9.81*0.100478/0.052 + 9.81*0.150614/0.078 + 9.81*0.200790/0.102)/4}\pgfmathresult\] 
+    %niepewność pomiaru
+    Niepewność pomiaru wydłużenia sprężyny oszacowaliśmy na 0,1 cm.
+    Niepewność pomiaru współczynnika sprężystości:
+    \\f(x) = 0.051*x - 0.119 \\
+    f'(x) = 0.051 \\
+    Średnia wartość współczynnika sprężystości sprężyny:
+    \[ k = \pgfmathparse{(9.81*0.050155/0.025 + 9.81*0.100478/0.052 + 9.81*0.150614/0.078 + 9.81*0.200790/0.102)/4}\pgfmathresult\ \]
+    Zatem: 
+    \[ k = (\pgfmathparse{(9.81*0.050155/0.025 + 9.81*0.100478/0.052 + 9.81*0.150614/0.078 + 9.81*0.200790/0.102)/4}\pgfmathresult\ \pm  0.081) \frac{N}{m} \]
+    
+    Korzystając ze wzoru $k = k_1 + k_2$ możemy obliczyć teoretyczną wartość współczynnika sprężystośći.
+    \[ k = 9.85445 +  9.84338 = \pgfmathparse{9.85445 +  9.84338}\pgfmathresult\]
+
+    \input{Grafy/szeregowo/dynamiczna/graf.tex}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & \rrtabname & stała sprężystości k\\
+            \hline
+            0.050155 & \pgfmathparse{(8.54+8.53+8.36)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.050155  / ((8.54+8.53+8.36)/(3*20))^2}\pgfmathresult\\  
+            \hline
+            0.100478 & \pgfmathparse{(10.56+10.55+10.55)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.100478  / ((10.56+10.55+10.55)/(3*20))^2}\pgfmathresult\\    
+            \hline
+            0.150614 & \pgfmathparse{(12.15+12.13+12.11)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.150614  / ((12.15+12.13+12.11)/(3*20))^2}\pgfmathresult\\    
+            \hline
+            0.200790 & \pgfmathparse{(13.58+13.57+13.59)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.200790  / ((13.58+13.57+13.59)/(3*20))^2}\pgfmathresult\\  
+            \hline
+        \end{tabular}
+    \end{table}
+    \[ k_{\mbox{średnie}} = \pgfmathparse{((4*(3.14)^2 * 0.050155  / ((8.54+8.53+8.36)/(3*20))^2) + (4*(3.14)^2 * 0.100478  / ((10.56+10.55+10.55)/(3*20))^2) + (4*(3.14)^2 * 0.150614  / ((12.15+12.13+12.11)/(3*20))^2) + (4*(3.14)^2 * 0.200790  / ((13.58+13.57+13.59)/(3*20))^2))/4}\pgfmathresult \]
+    %niepewność pomiaru
+    Niepewność pomiaru wydłużenia sprężyny oszacowaliśmy na 0,1 cm.
+    Niepewność pomiaru współczynnika sprężystości:
+    \\f(x) = 0.061*x + 1.862 \\
+    f'(x) = 0.061 \\
+    Średnia wartość współczynnika sprężystości sprężyny:
+    \[ k = \pgfmathparse{((4*(3.14)^2 * 0.050155  / ((8.54+8.53+8.36)/(3*20))^2) + (4*(3.14)^2 * 0.100478  / ((10.56+10.55+10.55)/(3*20))^2) + (4*(3.14)^2 * 0.150614  / ((12.15+12.13+12.11)/(3*20))^2) + (4*(3.14)^2 * 0.200790  / ((13.58+13.57+13.59)/(3*20))^2))/4}\pgfmathresult \]
+    Zatem: 
+    \[ k = (\pgfmathparse{((4*(3.14)^2 * 0.050155  / ((8.54+8.53+8.36)/(3*20))^2) + (4*(3.14)^2 * 0.100478  / ((10.56+10.55+10.55)/(3*20))^2) + (4*(3.14)^2 * 0.150614  / ((12.15+12.13+12.11)/(3*20))^2) + (4*(3.14)^2 * 0.200790  / ((13.58+13.57+13.59)/(3*20))^2))/4}\pgfmathresult \pm  0.061) \frac{N}{m} \]
+    
+    
+    \textbf{M7.5}
+    Wyznaczanie współczynnika sprężystości sprężyn połączonych szeregowe \\
+    \input{Grafy/rownolegle/statyczna/graf.tex}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & Wydłużenie[m] & stała sprężystości k\\
+            \hline
+            0.050155  & 0.105 & \pgfmathparse{9.81*0.050155/0.105}\pgfmathresult\\  
+            \hline
+            0.100478  & 0.208 & \pgfmathparse{9.81*0.100478/0.208}\pgfmathresult\\    
+            \hline
+            0.150614 & 0.311 & \pgfmathparse{9.81*0.150614/0.311}\pgfmathresult\\    
+            \hline
+            0.200790 & 0.413 & \pgfmathparse{9.81*0.200790/0.413}\pgfmathresult\\   
+            \hline
+        \end{tabular}
+        \caption{obliczanie stałej k dla poszczególnych pomiarów.}
+    \end{table}
+    \[k_{\mbox{średnia}} = \pgfmathparse{(9.81*0.050155/0.105 + 9.81*0.100478/0.208 + 9.81*0.150614/0.311 + 9.81*0.200790/0.413)/4}\pgfmathresult\]
+    %niepewność pomiaru
+    Niepewność pomiaru wydłużenia sprężyny oszacowaliśmy na 0,1 cm.
+    Niepewność pomiaru współczynnika sprężystości:
+    \\f(x) = 0.206*x + -0.556 \\
+    f'(x) = 0.206 \\
+    Średnia wartość współczynnika sprężystości sprężyny:
+    \[ k = \pgfmathparse{(9.81*0.050155/0.105 + 9.81*0.100478/0.208 + 9.81*0.150614/0.311 + 9.81*0.200790/0.413)/4}\pgfmathresult\ \]
+    \[ k = \pgfmathparse{}\pgfmathresult\ \]
+    Zatem: 
+    \[ k = (\pgfmathparse{(9.81*0.050155/0.105 + 9.81*0.100478/0.208 + 9.81*0.150614/0.311 + 9.81*0.200790/0.413)/4}\pgfmathresult\ \pm  0.206) \frac{N}{m} \]
+    Korzystając ze wzoru $\frac{1}{k} = \frac{1}{k_1} + \frac{1}{k_2}$ oraz co za tym idzie $k = \frac{k_1k_2}{k_1+k_2}$ możemy obliczyć teoretyczną wartość współczynnika sprężystośći.
+    \[ k = \frac{9.85445 * 9.84338}{9.85445 +  9.84338} = \pgfmathparse{(9.85445*9.84338)/(9.85445 +  9.84338)}\pgfmathresult\]
+
+    \input{Grafy/rownolegle/dynamiczna/graf.tex}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Masa ciężarków[kg] & \rrtabname & stała sprężystości k\\
+            \hline
+            0.050155 & \pgfmathparse{(13.91+13.88+13.96)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.050155  / ((13.91+13.88+13.96)/(3*20))^2}\pgfmathresult\\  
+            \hline
+            0.100478 & \pgfmathparse{(18.58+18.45+18.40)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.100478  / ((18.58+18.45+18.40)/(3*20))^2}\pgfmathresult\\    
+            \hline
+            0.150614 & \pgfmathparse{(22.16+22.15+22.16)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.150614  / ((22.16+22.15+22.16)/(3*20))^2}\pgfmathresult\\    
+            \hline
+            0.200790 & \pgfmathparse{(25.32+25.36+25.30)/3}\pgfmathresult & \pgfmathparse{4*(3.14)^2 * 0.200790  / ((25.32+25.36+25.30)/(3*20))^2}\pgfmathresult\\  
+            \hline
+        \end{tabular}
+    \end{table}
+    \[ k_{\mbox{średnie}} = \pgfmathparse{((4*(3.14)^2 * 0.050155  / ((13.91+13.88+13.96)/(3*20))^2) + (4*(3.14)^2 * 0.100478  / ((18.58+18.45+18.40)/(3*20))^2) + (4*(3.14)^2 * 0.150614  / ((22.16+22.15+22.16)/(3*20))^2) + (4*(3.14)^2 * 0.200790  / ((25.32+25.36+25.30)/(3*20))^2))/4}\pgfmathresult \]
+     
+    %niepewność pomiaru
+    Niepewność pomiaru wydłużenia sprężyny oszacowaliśmy na 0,1 cm.
+    Niepewność pomiaru współczynnika sprężystości:
+    \\f(x) = 0.117*x + 3.269 \\
+    f'(x) = 0.117 \\
+    Średnia wartość współczynnika sprężystości sprężyny:
+    \[ k = \pgfmathparse{((4*(3.14)^2 * 0.050155  / ((13.91+13.88+13.96)/(3*20))^2) + (4*(3.14)^2 * 0.100478  / ((18.58+18.45+18.40)/(3*20))^2) + (4*(3.14)^2 * 0.150614  / ((22.16+22.15+22.16)/(3*20))^2) + (4*(3.14)^2 * 0.200790  / ((25.32+25.36+25.30)/(3*20))^2))/4}\pgfmathresult \]
+    Zatem: 
+    \[ k = (\pgfmathparse{((4*(3.14)^2 * 0.050155  / ((13.91+13.88+13.96)/(3*20))^2) + (4*(3.14)^2 * 0.100478  / ((18.58+18.45+18.40)/(3*20))^2) + (4*(3.14)^2 * 0.150614  / ((22.16+22.15+22.16)/(3*20))^2) + (4*(3.14)^2 * 0.200790  / ((25.32+25.36+25.30)/(3*20))^2))/4}\pgfmathresult \pm  0.117) \frac{N}{m} \]
+    Korzystając ze wzoru $\frac{1}{k} = \frac{1}{k_1} + \frac{1}{k_2}$ oraz co za tym idzie $k = \frac{k_1k_2}{k_1+k_2}$ możemy obliczyć teoretyczną wartość współczynnika sprężystośći.
+    \[ k = \frac{10.01283 * 9.547}{10.01283 +  9.547} = \pgfmathparse{(10.01283*9.547)/(10.01283 +  9.547)}\pgfmathresult\]
+
+\end{document}
+%dla pierwszego f(x) = 0.1x + 0.04 f'(x) = 0.1 a f(100) = 10.04
